@@ -1,4 +1,3 @@
-import os
 #Задание 1
 def read_recipes(file_name):
     cook_book = {}
@@ -72,6 +71,7 @@ def merge_files(file_names, output_file):
 
 # Пример вызова функции с заданными именами файлов
 file_names = [r"C:\Users\User\Desktop\test\files\1.txt", r"C:\Users\User\Desktop\test\files\2.txt", r"C:\Users\User\Desktop\test\files\3.txt"]  # Имена файлов в папке
-output_file = "merged_file.txt"  # Имя файла для результата
+output_file = "merged_file.txt"  # Имя файла для результата(результат вывода прикрепил в md файле ТЗ)
 merge_files(file_names, output_file)
+
 
