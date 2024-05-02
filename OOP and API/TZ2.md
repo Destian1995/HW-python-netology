@@ -120,6 +120,10 @@ get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'
 Строка номер 1 файла номер 1
 Строка номер 2 файла номер 1
 ```
+
+
+
+Все задания я прикрепил в едином файле [здесь](https://github.com/Destian1995/HW-python-netology/blob/main/OOP%20and%20API/work%20in%20files.py)
 Вот что получилось:
 ```
 C:\Users\User\Desktop\test\files\2.txt
