@@ -48,6 +48,13 @@ CREATE TABLE Track_Collections (
     PRIMARY KEY (Track_id, Collection_id)
 );
 
+-- Создание таблицы "Связь исполнителей и альбомов"
+CREATE TABLE Performer_Albums (
+    Performer_id INT REFERENCES Performers(id),
+    Album_id INT REFERENCES Albums(id),
+    PRIMARY KEY (Performer_id, Album_id)
+);
+
 -- Вставка данных в таблицу "Список жанров музыки"
 INSERT INTO MusicGenres (Genre) VALUES
     ('Рок'),
@@ -74,7 +81,7 @@ INSERT INTO Albums (Album, ReleaseYear) VALUES
 
 -- Вставка данных в таблицу "Список трэков"
 INSERT INTO Tracks (Track, Duration) VALUES
-    ('Electric pulse', '2:40'),
+    ('Electric Pulse', '2:40'),
     ('No Submission', '2:42'),
     ('Reptile', '2:31'),
     ('Set it Off', '3:55'),
@@ -99,6 +106,7 @@ INSERT INTO Genre_Performers (Genre_id, Performer_id) VALUES
     ((SELECT id FROM MusicGenres WHERE Genre = 'Электропоп'), (SELECT id FROM Performers WHERE Performer = 'Бритни Спирс')),
     ((SELECT id FROM MusicGenres WHERE Genre = 'Электропоп'), (SELECT id FROM Performers WHERE Performer = 'Уэйн Статик'));
 
+
 -- Вставка данных в таблицу "Связь исполнителей и альбомов"
 INSERT INTO Performer_Albums (Performer_id, Album_id) VALUES
     ((SELECT id FROM Performers WHERE Performer = 'Уэйн Статик'), (SELECT id FROM Albums WHERE Album = 'Shadow Zone')),
@@ -112,9 +120,9 @@ INSERT INTO Performer_Albums (Performer_id, Album_id) VALUES
 
 -- Вставка данных в таблицу "Связь треков и сборников"
 INSERT INTO Track_Collections (Track_id, Collection_id) VALUES
-    ((SELECT id FROM Tracks WHERE Track = 'No Submission'), (SELECT id FROM Collection WHERE Names = 'Популярные хиты 2007')),
+    ((SELECT id FROM Tracks WHERE Track = 'No Submission'), (SELECT id FROM Collection WHERE Names = 'Популярные хиты 2007')), 
     ((SELECT id FROM Tracks WHERE Track = 'Toy Soldier'), (SELECT id FROM Collection WHERE Names = 'Популярные хиты 2007')),
     ((SELECT id FROM Tracks WHERE Track = 'Electric Pulse'), (SELECT id FROM Collection WHERE Names = 'Популярные хиты 2007')),
     ((SELECT id FROM Tracks WHERE Track = 'Price of Me'), (SELECT id FROM Collection WHERE Names = 'Shadow')),
     ((SELECT id FROM Tracks WHERE Track = 'La Liriona'), (SELECT id FROM Collection WHERE Names = 'Shadow')),
-    ((SELECT id FROM Tracks WHERE Track = 'Toy Soldier'), (SELECT id FROM Collection WHERE Names = 'Shadow'));
+    ((SELECT id FROM Tracks WHERE Track = 'Toy Soldier'), (SELECT id FROM Collection WHERE Names = 'Shadow')); 
