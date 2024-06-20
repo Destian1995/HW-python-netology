@@ -1,8 +1,8 @@
-Благодаря [скрипту](https://github.com/Destian1995/HW-python-netology/blob/main/SUBD/create_DB.sql) создания БД
+# Благодаря [скрипту](https://github.com/Destian1995/HW-python-netology/blob/main/SUBD/create_DB.sql) создания БД
 
-Происходит создание 8 таблиц с созданием связей "многие ко многим"
-Вот как это выглядит:
--
+# Происходит создание 8 таблиц с созданием связей "многие ко многим"
+# Вот как это выглядит:
+
 ## Альбомы имеют связи с исполнителями через таблицу performer_albums
 ![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/25c1f597-84f7-4e15-a568-3116aceae7b0)
 
