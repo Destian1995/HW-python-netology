@@ -55,6 +55,13 @@ CREATE TABLE Performer_Albums (
     PRIMARY KEY (Performer_id, Album_id)
 );
 
+-- Создание таблицы "Связь трэков и альбомов"
+CREATE TABLE Track_Albums (
+    Track_id INT REFERENCES Track(id),
+    Albums_id INT REFERENCES Albums(id),
+    PRIMARY KEY (Track_id, Albums_id)
+);
+
 -- Вставка данных в таблицу "Список жанров музыки"
 INSERT INTO MusicGenres (Genre) VALUES
     ('Рок'),
