@@ -57,7 +57,7 @@ CREATE TABLE Performer_Albums (
 
 -- Создание таблицы "Связь трэков и альбомов"
 CREATE TABLE Track_Albums (
-    Track_id INT REFERENCES Track(id),
+    Track_id INT REFERENCES Tracks(id),
     Albums_id INT REFERENCES Albums(id),
     PRIMARY KEY (Track_id, Albums_id)
 );
