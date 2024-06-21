@@ -133,3 +133,14 @@ INSERT INTO Track_Collections (Track_id, Collection_id) VALUES
     ((SELECT id FROM Tracks WHERE Track = 'Price of Me'), (SELECT id FROM Collection WHERE Names = 'Shadow')),
     ((SELECT id FROM Tracks WHERE Track = 'La Liriona'), (SELECT id FROM Collection WHERE Names = 'Shadow')),
     ((SELECT id FROM Tracks WHERE Track = 'Toy Soldier'), (SELECT id FROM Collection WHERE Names = 'Shadow')); 
+
+-- Вставка данных в таблицу "Связь трэков и альбомов"
+INSERT INTO Track_Albums (Track_id, Albums_id) VALUES
+   ((SELECT id FROM Tracks WHERE Track = 'No Submission'),(SELECT id FROM Albums WHERE Album = 'Cannibal')),
+   ((SELECT id FROM Tracks WHERE Track = 'Toy Soldier'),(SELECT id FROM Albums WHERE Album = 'Blackout')),
+   ((SELECT id FROM Tracks WHERE Track = 'Electric Pulse'),(SELECT id FROM Albums WHERE Album = 'Cannibal')),
+   ((SELECT id FROM Tracks WHERE Track = 'Price of Me'),(SELECT id FROM Albums WHERE Album = 'Shadow Zone')),
+   ((SELECT id FROM Tracks WHERE Track = 'La Liriona'),(SELECT id FROM Albums WHERE Album = 'The Promise')),
+   ((SELECT id FROM Tracks WHERE Track = 'Je te veux'),(SELECT id FROM Albums WHERE Album = 'The Promise')),
+   ((SELECT id FROM Tracks WHERE Track = 'Set it Off'),(SELECT id FROM Albums WHERE Album = 'Start a War')),
+   ((SELECT id FROM Tracks WHERE Track = 'Reptile'),(SELECT id FROM Albums WHERE Album = 'Start a War'));
