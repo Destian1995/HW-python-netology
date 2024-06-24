@@ -85,7 +85,8 @@ INSERT INTO Albums (Album, ReleaseYear) VALUES
     ('Start a War', 2005),
     ('Cannibal', 2007),
     ('Blackout', 2007),
-    ('The Promise', 2004);
+    ('The Promise', 2004),
+    ('Meteora', 2003);
 
 -- Вставка данных в таблицу "Список трэков"
 INSERT INTO Tracks (Track, Duration) VALUES
@@ -96,7 +97,8 @@ INSERT INTO Tracks (Track, Duration) VALUES
     ('La Liriona', '3:44'),
     ('Je te veux', '3:22'),
     ('Toy Soldier', '4:19'),
-    ('Price of Me', '3:32');
+    ('Price of Me', '3:32'),
+    ('Somewhere I Belong', '3:34');
 
 -- Вставка данных в таблицу "Сборник"
 INSERT INTO Collection (Names, ReleaseYear) VALUES
@@ -127,7 +129,8 @@ INSERT INTO Performer_Albums (Performer_id, Album_id) VALUES
     ((SELECT id FROM Performers WHERE Performer = 'Бритни Спирс'), (SELECT id FROM Albums WHERE Album = 'Blackout')),
     ((SELECT id FROM Performers WHERE Performer = 'Бритни Спирс'), (SELECT id FROM Albums WHERE Album = 'Start a War')),
     ((SELECT id FROM Performers WHERE Performer = 'Бритни Спирс'), (SELECT id FROM Albums WHERE Album = 'The Promise')),
-    ((SELECT id FROM Performers WHERE Performer = 'Дани Клейн'), (SELECT id FROM Albums WHERE Album = 'The Promise'));
+    ((SELECT id FROM Performers WHERE Performer = 'Дани Клейн'), (SELECT id FROM Albums WHERE Album = 'The Promise')),
+    ((SELECT id FROM Performers WHERE Performer = 'Честер Беннингон'), (SELECT id FROM Albums WHERE Album = 'Meteora'));
 
 -- Вставка данных в таблицу "Связь треков и сборников"
 INSERT INTO Track_Collections (Track_id, Collection_id) VALUES
@@ -135,8 +138,10 @@ INSERT INTO Track_Collections (Track_id, Collection_id) VALUES
     ((SELECT id FROM Tracks WHERE Track = 'Toy Soldier'), (SELECT id FROM Collection WHERE Names = 'Популярные хиты 2007')),
     ((SELECT id FROM Tracks WHERE Track = 'Electric Pulse'), (SELECT id FROM Collection WHERE Names = 'Популярные хиты 2007')),
     ((SELECT id FROM Tracks WHERE Track = 'Price of Me'), (SELECT id FROM Collection WHERE Names = 'Shadow')),
-    ((SELECT id FROM Tracks WHERE Track = 'La Liriona'), (SELECT id FROM Collection WHERE Names = 'Shadow')),
-    ((SELECT id FROM Tracks WHERE Track = 'Toy Soldier'), (SELECT id FROM Collection WHERE Names = 'Shadow')); 
+    ((SELECT id FROM Tracks WHERE Track = 'La Liriona'), (SELECT id FROM Collection WHERE Names = 'Дух блюза')),
+    ((SELECT id FROM Tracks WHERE Track = 'Toy Soldier'), (SELECT id FROM Collection WHERE Names = 'Shadow')),
+    ((SELECT id FROM Tracks WHERE Track = 'Reptile'), (SELECT id FROM Collection WHERE Names = 'Легенды рока')),
+    ((SELECT id FROM Tracks WHERE Track = 'Somewhere I Belong'), (SELECT id FROM Collection WHERE Names = 'Легенды рока')),; 
 
 -- Вставка данных в таблицу "Связь трэков и альбомов"
 INSERT INTO Track_Albums (Track_id, Albums_id) VALUES
@@ -147,4 +152,5 @@ INSERT INTO Track_Albums (Track_id, Albums_id) VALUES
    ((SELECT id FROM Tracks WHERE Track = 'La Liriona'),(SELECT id FROM Albums WHERE Album = 'The Promise')),
    ((SELECT id FROM Tracks WHERE Track = 'Je te veux'),(SELECT id FROM Albums WHERE Album = 'The Promise')),
    ((SELECT id FROM Tracks WHERE Track = 'Set it Off'),(SELECT id FROM Albums WHERE Album = 'Start a War')),
+   ((SELECT id FROM Tracks WHERE Track = 'Somewhere I Belong'),(SELECT id FROM Albums WHERE Album = 'Meteora')),
    ((SELECT id FROM Tracks WHERE Track = 'Reptile'),(SELECT id FROM Albums WHERE Album = 'Start a War'));
