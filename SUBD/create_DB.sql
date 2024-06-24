@@ -141,7 +141,7 @@ INSERT INTO Track_Collections (Track_id, Collection_id) VALUES
     ((SELECT id FROM Tracks WHERE Track = 'La Liriona'), (SELECT id FROM Collection WHERE Names = 'Дух блюза')),
     ((SELECT id FROM Tracks WHERE Track = 'Toy Soldier'), (SELECT id FROM Collection WHERE Names = 'Shadow')),
     ((SELECT id FROM Tracks WHERE Track = 'Reptile'), (SELECT id FROM Collection WHERE Names = 'Легенды рока')),
-    ((SELECT id FROM Tracks WHERE Track = 'Somewhere I Belong'), (SELECT id FROM Collection WHERE Names = 'Легенды рока')),; 
+    ((SELECT id FROM Tracks WHERE Track = 'Somewhere I Belong'), (SELECT id FROM Collection WHERE Names = 'Легенды рока')); 
 
 -- Вставка данных в таблицу "Связь трэков и альбомов"
 INSERT INTO Track_Albums (Track_id, Albums_id) VALUES
