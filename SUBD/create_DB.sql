@@ -103,7 +103,7 @@ INSERT INTO Collection (Names, ReleaseYear) VALUES
     ('Популярные хиты 2007', 2008),
     ('Shadow', 2021),
     ('Легенды рока', 2019),
-    ('Дух блюза',2023);
+    ('Дух блюза', 2023);
 
 -- Вставка данных в таблицу "Связь жанров и исполнителей"
 INSERT INTO Genre_Performers (Genre_id, Performer_id) VALUES
@@ -114,6 +114,7 @@ INSERT INTO Genre_Performers (Genre_id, Performer_id) VALUES
     ((SELECT id FROM MusicGenres WHERE Genre = 'Блюз'), (SELECT id FROM Performers WHERE Performer = 'Бритни Спирс')),
     ((SELECT id FROM MusicGenres WHERE Genre = 'Блюз'), (SELECT id FROM Performers WHERE Performer = 'Дани Клейн')),
     ((SELECT id FROM MusicGenres WHERE Genre = 'Электропоп'), (SELECT id FROM Performers WHERE Performer = 'Бритни Спирс')),
+    ((SELECT id FROM MusicGenres WHERE Genre = 'Рок'), (SELECT id FROM Performers WHERE Performer = 'Честер Беннингон')),
     ((SELECT id FROM MusicGenres WHERE Genre = 'Электропоп'), (SELECT id FROM Performers WHERE Performer = 'Уэйн Статик'));
 
 
