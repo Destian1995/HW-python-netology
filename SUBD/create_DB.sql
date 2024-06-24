@@ -76,7 +76,8 @@ INSERT INTO MusicGenres (Genre) VALUES
 INSERT INTO Performers (Performer) VALUES
     ('Уэйн Статик'),
     ('Бритни Спирс'),
-    ('Дани Клейн');
+    ('Дани Клейн'),
+    ('Честер Беннингон');
 
 -- Вставка данных в таблицу "Список альбомов"
 INSERT INTO Albums (Album, ReleaseYear) VALUES
@@ -100,7 +101,9 @@ INSERT INTO Tracks (Track, Duration) VALUES
 -- Вставка данных в таблицу "Сборник"
 INSERT INTO Collection (Names, ReleaseYear) VALUES
     ('Популярные хиты 2007', 2008),
-    ('Shadow', 2021);
+    ('Shadow', 2021),
+    ('Легенды рока', 2019),
+    ('Дух блюза',2023);
 
 -- Вставка данных в таблицу "Связь жанров и исполнителей"
 INSERT INTO Genre_Performers (Genre_id, Performer_id) VALUES
