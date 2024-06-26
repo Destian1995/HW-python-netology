@@ -114,7 +114,7 @@ INSERT INTO Genre_Performers (Genre_id, Performer_id) VALUES
     ((SELECT id FROM MusicGenres WHERE Genre = 'Постпанк'), (SELECT id FROM Performers WHERE Performer = 'Уэйн Статик')),
     ((SELECT id FROM MusicGenres WHERE Genre = 'Поп'), (SELECT id FROM Performers WHERE Performer = 'Бритни Спирс')),
     ((SELECT id FROM MusicGenres WHERE Genre = 'Блюз'), (SELECT id FROM Performers WHERE Performer = 'Бритни Спирс')),
-    ((SELECT id FROM MusicGenres WHERE Genre = 'Блюз'), (SELECT id FROM Performers WHERE Performer = 'Дани Клейн')),
+    ((SELECT id FROM MusicGenres WHERE Genre = 'Блюз'), (SELECT id FROM Performers WHERE Performer = 'Клейн')),
     ((SELECT id FROM MusicGenres WHERE Genre = 'Электропоп'), (SELECT id FROM Performers WHERE Performer = 'Бритни Спирс')),
     ((SELECT id FROM MusicGenres WHERE Genre = 'Рок'), (SELECT id FROM Performers WHERE Performer = 'Честер Беннингон')),
     ((SELECT id FROM MusicGenres WHERE Genre = 'Электропоп'), (SELECT id FROM Performers WHERE Performer = 'Уэйн Статик'));
@@ -129,7 +129,7 @@ INSERT INTO Performer_Albums (Performer_id, Album_id) VALUES
     ((SELECT id FROM Performers WHERE Performer = 'Бритни Спирс'), (SELECT id FROM Albums WHERE Album = 'Blackout')),
     ((SELECT id FROM Performers WHERE Performer = 'Бритни Спирс'), (SELECT id FROM Albums WHERE Album = 'Start a War')),
     ((SELECT id FROM Performers WHERE Performer = 'Бритни Спирс'), (SELECT id FROM Albums WHERE Album = 'The Promise')),
-    ((SELECT id FROM Performers WHERE Performer = 'Дани Клейн'), (SELECT id FROM Albums WHERE Album = 'The Promise')),
+    ((SELECT id FROM Performers WHERE Performer = 'Клейн'), (SELECT id FROM Albums WHERE Album = 'The Promise')),
     ((SELECT id FROM Performers WHERE Performer = 'Честер Беннингон'), (SELECT id FROM Albums WHERE Album = 'Meteora'));
 
 -- Вставка данных в таблицу "Связь треков и сборников"
@@ -137,7 +137,7 @@ INSERT INTO Track_Collections (Track_id, Collection_id) VALUES
     ((SELECT id FROM Tracks WHERE Track = 'No Submission'), (SELECT id FROM Collection WHERE Names = 'Популярные хиты 2007')), 
     ((SELECT id FROM Tracks WHERE Track = 'Toy Soldier'), (SELECT id FROM Collection WHERE Names = 'Популярные хиты 2007')),
     ((SELECT id FROM Tracks WHERE Track = 'Electric Pulse'), (SELECT id FROM Collection WHERE Names = 'Популярные хиты 2007')),
-    ((SELECT id FROM Tracks WHERE Track = 'Price of Me'), (SELECT id FROM Collection WHERE Names = 'Shadow')),
+    ((SELECT id FROM Tracks WHERE Track = 'Price of My'), (SELECT id FROM Collection WHERE Names = 'Shadow')),
     ((SELECT id FROM Tracks WHERE Track = 'La Liriona'), (SELECT id FROM Collection WHERE Names = 'Дух блюза')),
     ((SELECT id FROM Tracks WHERE Track = 'Toy Soldier'), (SELECT id FROM Collection WHERE Names = 'Shadow')),
     ((SELECT id FROM Tracks WHERE Track = 'Reptile'), (SELECT id FROM Collection WHERE Names = 'Легенды рока')),
@@ -148,9 +148,9 @@ INSERT INTO Track_Albums (Track_id, Albums_id) VALUES
    ((SELECT id FROM Tracks WHERE Track = 'No Submission'),(SELECT id FROM Albums WHERE Album = 'Cannibal')),
    ((SELECT id FROM Tracks WHERE Track = 'Toy Soldier'),(SELECT id FROM Albums WHERE Album = 'Blackout')),
    ((SELECT id FROM Tracks WHERE Track = 'Electric Pulse'),(SELECT id FROM Albums WHERE Album = 'Cannibal')),
-   ((SELECT id FROM Tracks WHERE Track = 'Price of Me'),(SELECT id FROM Albums WHERE Album = 'Shadow Zone')),
+   ((SELECT id FROM Tracks WHERE Track = 'Price of My'),(SELECT id FROM Albums WHERE Album = 'Shadow Zone')),
    ((SELECT id FROM Tracks WHERE Track = 'La Liriona'),(SELECT id FROM Albums WHERE Album = 'The Promise')),
-   ((SELECT id FROM Tracks WHERE Track = 'Je te veux'),(SELECT id FROM Albums WHERE Album = 'The Promise')),
+   ((SELECT id FROM Tracks WHERE Track = 'Je my veux'),(SELECT id FROM Albums WHERE Album = 'The Promise')),
    ((SELECT id FROM Tracks WHERE Track = 'Set it Off'),(SELECT id FROM Albums WHERE Album = 'Start a War')),
    ((SELECT id FROM Tracks WHERE Track = 'Somewhere I Belong'),(SELECT id FROM Albums WHERE Album = 'Meteora')),
    ((SELECT id FROM Tracks WHERE Track = 'Reptile'),(SELECT id FROM Albums WHERE Album = 'Start a War'));
