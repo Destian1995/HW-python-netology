@@ -50,17 +50,61 @@ WHERE track LIKE '%my%' OR track LIKE '%My%';
 
 1. Количество исполнителей в каждом жанре.
 ```
+SELECT g.genre, COUNT(a.id) AS count_artists
+FROM musicgenres g
+JOIN genre_performers ag ON g.id = ag.genre_id
+JOIN performers a ON ag.genre_id = a.id
+GROUP BY g.genre;
 ```
+![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/62f55305-1d26-4b1b-a0b9-41cd73c0bf3c)
+
+
 2. Количество треков, вошедших в альбомы 2019–2020 годов.
 ```
+SELECT COUNT(t.id) AS count_tracks
+FROM tracks t
+JOIN albums a ON t.id = a.id
+WHERE a.releaseyear BETWEEN 2019 AND 2020;
 ```
+![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/0432deb5-d424-45df-8076-dcbd562192a9)
+
+
 3. Средняя продолжительность треков по каждому альбому.
+Здесь вывел в секундах, в том же формате что и в таблице пока не удается, там какие-то совсем сложные запросы получатся должны с вычислениями.
 ```
+SELECT a.album, 
+       AVG((SUBSTRING(t.duration, 1, POSITION(':' IN t.duration) - 1)::INT * 60 + 
+           SUBSTRING(t.duration, POSITION(':' IN t.duration) + 1)::INT)::NUMERIC) AS average_duration
+FROM albums a
+JOIN tracks t ON a.id = t.id
+GROUP BY a.album;
 ```
+![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/5b845bf2-6675-47fb-a082-0a66893a7a4f)
+
+
 4. Все исполнители, которые не выпустили альбомы в 2020 году.
+
 ```
+SELECT DISTINCT p.performer
+FROM performers p
+LEFT JOIN performer_albums pa ON p.id = pa.performer_id
+LEFT JOIN albums a ON pa.album_id = a.id
+GROUP BY p.performer
+HAVING SUM(CASE WHEN a.releaseyear = 2020 THEN 1 ELSE 0 END) = 0; 
 ```
+![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/440c5573-d6ba-4785-811e-880e461cb9bf)
+
+
 5. Названия сборников, в которых присутствует конкретный исполнитель (выберите его сами).
 ```
+select c.names
+from collection c 
+left join track_collections tc on c.id = tc.collection_id
+left join track_albums ta on ta.albums_id = tc.track_id
+left join performer_albums pa on pa.performer_id = ta.albums_id
+left join performers p on p.id = pa.album_id 
+where p.performer = 'Уэйн Статик';
+
+
 ```
 
