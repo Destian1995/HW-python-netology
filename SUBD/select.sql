@@ -1,3 +1,5 @@
+-- Задание 2
+
 SELECT track, duration
 FROM tracks
 ORDER BY duration DESC
@@ -18,4 +20,12 @@ WHERE performer NOT LIKE '% %';
 SELECT track
 FROM tracks
 WHERE track LIKE '%my%' OR track LIKE '%My%';
+
+-- Задание 3
+
+SELECT g.genre, COUNT(a.id) AS count_artists
+FROM musicgenres g
+JOIN genre_performers ag ON g.id = ag.genre_id
+JOIN performers a ON ag.genre_id = a.id
+GROUP BY g.genre;
 
