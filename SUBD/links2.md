@@ -18,6 +18,7 @@ FROM tracks
 WHERE duration >= '210';
 ```
 ![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/b219ec09-d0ae-4480-97a4-2841395c3692)
+
 3. Названия сборников, вышедших в период с 2018 по 2020 год включительно.
 ```
 SELECT names
@@ -25,6 +26,7 @@ FROM collection
 WHERE releaseyear BETWEEN 2018 AND 2020;
 ```
 ![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/b150b553-b019-40d3-a2a0-70b75fca3b14)
+
 4. Исполнители, чьё имя состоит из одного слова.
 ```
 SELECT performer
