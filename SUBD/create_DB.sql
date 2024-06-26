@@ -76,16 +76,16 @@ INSERT INTO MusicGenres (Genre) VALUES
 INSERT INTO Performers (Performer) VALUES
     ('Уэйн Статик'),
     ('Бритни Спирс'),
-    ('Дани Клейн'),
+    ('Клейн'),
     ('Честер Беннингон');
 
 -- Вставка данных в таблицу "Список альбомов"
 INSERT INTO Albums (Album, ReleaseYear) VALUES
     ('Shadow Zone', 2003),
     ('Start a War', 2005),
-    ('Cannibal', 2007),
+    ('Cannibal', 2019),
     ('Blackout', 2007),
-    ('The Promise', 2004),
+    ('The Promise', 2020),
     ('Meteora', 2003);
 
 -- Вставка данных в таблицу "Список трэков"
@@ -95,9 +95,9 @@ INSERT INTO Tracks (Track, Duration) VALUES
     ('Reptile', '2:31'),
     ('Set it Off', '3:55'),
     ('La Liriona', '3:44'),
-    ('Je te veux', '3:22'),
+    ('Je my veux', '3:22'),
     ('Toy Soldier', '4:19'),
-    ('Price of Me', '3:32'),
+    ('Price of My', '3:32'),
     ('Somewhere I Belong', '3:34');
 
 -- Вставка данных в таблицу "Сборник"
