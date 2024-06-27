@@ -73,16 +73,13 @@ WHERE a.releaseyear BETWEEN 2019 AND 2020;
 
 
 3. Средняя продолжительность треков по каждому альбому.
-Здесь вывел в секундах, в том же формате что и в таблице пока не удается, там какие-то совсем сложные запросы получатся должны с вычислениями.
 ```
-SELECT a.album, 
-       AVG((SUBSTRING(t.duration, 1, POSITION(':' IN t.duration) - 1)::INT * 60 + 
-           SUBSTRING(t.duration, POSITION(':' IN t.duration) + 1)::INT)::NUMERIC) AS average_duration
+SELECT a.album, AVG(t.duration)
 FROM albums a
 JOIN tracks t ON a.id = t.id
 GROUP BY a.album;
 ```
-![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/5b845bf2-6675-47fb-a082-0a66893a7a4f)
+![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/22ec910e-f3d0-46f2-b80e-7d5878cc5324)
 
 
 4. Все исполнители, которые не выпустили альбомы в 2020 году.
