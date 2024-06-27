@@ -97,14 +97,16 @@ HAVING SUM(CASE WHEN a.releaseyear = 2020 THEN 1 ELSE 0 END) = 0;
 
 5. Названия сборников, в которых присутствует конкретный исполнитель (выберите его сами).
 ```
-select c.names
-from collection c 
-left join track_collections tc on c.id = tc.collection_id
-left join track_albums ta on ta.albums_id = tc.track_id
-left join performer_albums pa on pa.performer_id = ta.albums_id
-left join performers p on p.id = pa.album_id 
-where p.performer = 'Уэйн Статик';
-
-
+SELECT DISTINCT c.names
+FROM collection c 
+LEFT JOIN track_collections tc ON c.id = tc.collection_id
+LEFT JOIN track_albums ta ON tc.track_id = ta.track_id 
+LEFT JOIN performer_albums pa ON ta.albums_id = pa.album_id 
+LEFT JOIN performers p ON pa.performer_id = p.id 
+WHERE p.performer = 'Уэйн Статик'
+GROUP BY c.names;
 ```
+
+![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/27f54194-7d3e-4dfa-b18d-c8310ad355ee)
+
 
