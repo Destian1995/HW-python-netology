@@ -56,7 +56,7 @@ LEFT JOIN albums a ON pa.album_id = a.id
 GROUP BY p.performer
 HAVING SUM(CASE WHEN a.releaseyear = 2020 THEN 1 ELSE 0 END) = 0; 
 
--- Названия сборников, в которых присутствует конкретный исполнитель (выберите его сами).
+-- Названия сборников, в которых присутствует конкретный исполнитель.
 SELECT DISTINCT c.names
 FROM collection c 
 LEFT JOIN track_collections tc ON c.id = tc.collection_id
