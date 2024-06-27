@@ -7,12 +7,12 @@
 ## Задание 2
 1. Название и продолжительность самого длительного трека.
 ```
-SELECT track, duration
-FROM tracks
-ORDER BY duration DESC
-LIMIT 1;
+SELECT track, duration 
+FROM tracks 
+WHERE duration = (SELECT MAX(duration) FROM tracks);
 ```
-![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/ccefe2ee-716f-4f6d-9d41-c5734f029c6b)
+![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/d451b541-ddab-472b-8fbe-83ba04ad7158)
+
 
 2. Название треков, продолжительность которых не менее 3,5 минут.
 ```
@@ -85,14 +85,17 @@ GROUP BY a.album;
 4. Все исполнители, которые не выпустили альбомы в 2020 году.
 
 ```
-SELECT DISTINCT p.performer
-FROM performers p
-LEFT JOIN performer_albums pa ON p.id = pa.performer_id
-LEFT JOIN albums a ON pa.album_id = a.id
-GROUP BY p.performer
-HAVING SUM(CASE WHEN a.releaseyear = 2020 THEN 1 ELSE 0 END) = 0; 
+SELECT DISTINCT performer 
+FROM performers 
+WHERE id NOT IN (
+    SELECT DISTINCT pa.performer_id 
+    FROM performer_albums pa 
+    JOIN albums a ON pa.album_id = a.id 
+    WHERE a.releaseyear = 2020
+);
 ```
-![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/440c5573-d6ba-4785-811e-880e461cb9bf)
+![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/e9df487b-3601-47e8-adc8-7efb6b5fde1f)
+
 
 
 5. Названия сборников, в которых присутствует конкретный исполнитель (выберите его сами).
@@ -103,10 +106,9 @@ LEFT JOIN track_collections tc ON c.id = tc.collection_id
 LEFT JOIN track_albums ta ON tc.track_id = ta.track_id 
 LEFT JOIN performer_albums pa ON ta.albums_id = pa.album_id 
 LEFT JOIN performers p ON pa.performer_id = p.id 
-WHERE p.performer = 'Уэйн Статик'
-GROUP BY c.names;
+WHERE p.performer = 'Уэйн Статик';
 ```
 
-![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/27f54194-7d3e-4dfa-b18d-c8310ad355ee)
+![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/7cffb28c-edc7-40ae-8344-b2c496f403e8)
 
 
