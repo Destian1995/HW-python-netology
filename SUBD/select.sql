@@ -29,7 +29,7 @@ WHERE track LIKE '%my%' OR track LIKE '%My%';
 -- Задание 3
 
 -- Количество исполнителей в каждом жанре.
-SELECT g.genre, COUNT(a.id) AS count_artists
+SELECT g.genre, COUNT(a.id) AS количество_исполнителей
 FROM musicgenres g
 JOIN genre_performers ag ON g.id = ag.genre_id
 JOIN performers a ON ag.genre_id = a.id
