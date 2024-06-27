@@ -24,7 +24,7 @@ CREATE TABLE Albums (
 CREATE TABLE Tracks (
     id SERIAL PRIMARY KEY,
     Track VARCHAR(255) UNIQUE NOT NULL,
-    Duration VARCHAR(255) NOT NULL
+    Duration TIME NOT NULL
 );
 
 -- Создание таблицы "Сборник"
