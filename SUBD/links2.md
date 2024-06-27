@@ -50,13 +50,14 @@ WHERE track LIKE '%my%' OR track LIKE '%My%';
 
 1. Количество исполнителей в каждом жанре.
 ```
-SELECT g.genre, COUNT(a.id) AS count_artists
+SELECT g.genre, COUNT(a.id) AS количество_исполнителей
 FROM musicgenres g
 JOIN genre_performers ag ON g.id = ag.genre_id
 JOIN performers a ON ag.genre_id = a.id
 GROUP BY g.genre;
 ```
-![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/62f55305-1d26-4b1b-a0b9-41cd73c0bf3c)
+![image](https://github.com/Destian1995/HW-python-netology/assets/106807250/35ff0ed2-440e-4dfb-8d29-26608620f3cc)
+
 
 
 2. Количество треков, вошедших в альбомы 2019–2020 годов.
