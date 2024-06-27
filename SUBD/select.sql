@@ -49,12 +49,14 @@ GROUP BY a.album;
 
 
 -- Все исполнители, которые не выпустили альбомы в 2020 году.
-SELECT DISTINCT p.performer
-FROM performers p
-LEFT JOIN performer_albums pa ON p.id = pa.performer_id
-LEFT JOIN albums a ON pa.album_id = a.id
-GROUP BY p.performer
-HAVING SUM(CASE WHEN a.releaseyear = 2020 THEN 1 ELSE 0 END) = 0; 
+SELECT DISTINCT performer 
+FROM performers 
+WHERE id NOT IN (
+    SELECT DISTINCT pa.performer_id 
+    FROM performer_albums pa 
+    JOIN albums a ON pa.album_id = a.id 
+    WHERE a.releaseyear = 2020
+);
 
 -- Названия сборников, в которых присутствует конкретный исполнитель.
 SELECT DISTINCT c.names
@@ -63,5 +65,4 @@ LEFT JOIN track_collections tc ON c.id = tc.collection_id
 LEFT JOIN track_albums ta ON tc.track_id = ta.track_id 
 LEFT JOIN performer_albums pa ON ta.albums_id = pa.album_id 
 LEFT JOIN performers p ON pa.performer_id = p.id 
-WHERE p.performer = 'Уэйн Статик'
-GROUP BY c.names;
+WHERE p.performer = 'Уэйн Статик';
