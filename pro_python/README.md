@@ -21,7 +21,7 @@ if __name__ == '__main__':
 4. Найти интересный для себя пакет на [pypi](https://pypi.org/) и в файле requirements.txt указать его с актуальной версией. При желании можно написать программу с этим пакетом.
 
 
-***Вот написанный [проект](https://github.com/Destian1995/HW-python-netology/tree/main/pro_python/code) 
+--Вот написанный [проект](https://github.com/Destian1995/HW-python-netology/tree/main/pro_python/code) 
 
 \*5. Создать рядом с файлом main.py модуль dirty_main.py и импортировать все функции с помощью
 конструкции (необязательное задание).
