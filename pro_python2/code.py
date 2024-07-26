@@ -10,7 +10,7 @@ with open(file_path, encoding="utf-8") as f:
     rows = csv.reader(f, delimiter=",")
     contacts_list = list(rows)
 
-# TODO 1: Приведение ФИО к формату "Фамилия, Имя, Отчество"
+# Приведение ФИО к формату "Фамилия, Имя, Отчество"
 for contact in contacts_list:
     full_name = ' '.join(contact[:3]).split()
     while len(full_name) < 3:
@@ -19,12 +19,16 @@ for contact in contacts_list:
 
 # Приведение телефонов к формату +7(999)999-99-99 доб.9999
 phone_pattern = re.compile(
-    r"(\+7|8)?\s*\(?(\d{3})\)?[\s-]*(\d{3})[\s-]*(\d{2})[\s-]*(\d{2})(?:\s*доб\.*\s*(\d+))?"
+    r"(\+7|8)?\s*\(?(\d{3})\)?[\s-]?(\d{3})[\s-]?(\d{2})[\s-]?(\d{2})(?:\s*(?:доб\.?)?\s*(\d+))?"
 )
-phone_sub = r"+7(\2)\3-\4-\5 доб.\6"
 
 for contact in contacts_list:
-    contact[5] = re.sub(phone_pattern, phone_sub, contact[5]).replace(' доб. ', ' доб.')
+    match = phone_pattern.search(contact[5])
+    if match:
+        phone_number = f"+7({match.group(2)}){match.group(3)}-{match.group(4)}-{match.group(5)}"
+        if match.group(6):
+            phone_number += f" доб.{match.group(6)}"
+        contact[5] = phone_number
 
 # Объединение дублирующихся записей
 contacts_dict = {}
@@ -41,7 +45,7 @@ for contact in contacts_list:
 # Преобразование словаря обратно в список
 contacts_list = list(contacts_dict.values())
 
-# TODO 2: Сохраните получившиеся данные в другой файл
+# Сохранение получившихся данных в другой файл
 with open(result_file, "w", encoding="utf-8") as f:
     datawriter = csv.writer(f, delimiter=',')
     datawriter.writerows(contacts_list)
