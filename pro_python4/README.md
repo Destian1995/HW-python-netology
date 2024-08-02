@@ -45,3 +45,5 @@ for item in  flat_generator(nested_list):
 	print(item)
 ```
 Должен отпечататься каждый элемент каждого вложенного списка
+
+Выполненный [код](https://github.com/Destian1995/HW-python-netology/blob/main/pro_python4/cods/2.py)
