@@ -3,8 +3,9 @@ import re
 from pprint import pprint
 
 # читаем адресную книгу в формате CSV в список contacts_list
-file_path = r'C:\Users\User\Desktop\test\phonebook_raw.csv'
-result_file = r'C:\Users\User\Desktop\test\output.csv'
+# здесь добавил адреса расположения книг
+file_path = r'C:\Users\User\Desktop\phonebook_raw.csv'
+result_file = r'C:\Users\User\Desktop\output.csv'
 
 with open(file_path, encoding="utf-8") as f:
     rows = csv.reader(f, delimiter=",")

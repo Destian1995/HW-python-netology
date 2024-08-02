@@ -38,7 +38,8 @@ with open("phonebook.csv", "w", encoding="utf-8") as f:
 ```
 
 
-*** Дополненный код [тут]()
+* Дополненный код [тут](https://github.com/Destian1995/HW-python-netology/blob/main/pro_python2/code.py)
+* Результирующая таблица [вот](https://github.com/Destian1995/HW-python-netology/blob/main/pro_python2/output.csv)
 ---
 Домашнее задание сдавайте ссылкой на репозиторий [BitBucket](https://bitbucket.org/) или [GitHub](https://github.com/).
 
