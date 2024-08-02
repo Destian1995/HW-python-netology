@@ -31,7 +31,7 @@ None
 
 во `flat_list` должен быть такой список: `['a', 'b', 'c', 'd', 'e', 'f', 'h', False, 1, 2, None]`
 
-
+Выполненный [код](https://github.com/Destian1995/HW-python-netology/blob/main/pro_python4/cods/1.py)
 
 2. Написать генератор, который принимает список списков, и возвращает их плоское представление.
 Например
