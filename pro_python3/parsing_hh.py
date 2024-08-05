@@ -29,6 +29,7 @@ def searchitems(driver, keywords, jsondict=None):
 
     wait = WebDriverWait(driver, 10)
 
+    # находит элементы на странице с использованием XPATH и классов
     vacancies = driver.find_elements(By.XPATH, f"//*[contains(@class, '{vacancy_class_name}')]")
     salaries = driver.find_elements(By.XPATH, f"//*[contains(@class, '{salary_class_name}')]")
     companies = driver.find_elements(By.XPATH, f"//*[contains(@class, '{company_class_name}')]")
@@ -40,6 +41,7 @@ def searchitems(driver, keywords, jsondict=None):
               element.get_attribute('href') and 'https://spb.hh.ru/vacancy/' in element.get_attribute('href')]
     salaries1 = [salary.text for salary in salaries if salary.text]
 
+    # перебирает все найденные элементы и их атрибуты.
     for city, vacancy, salary, company, link in zip(citiesitog, vacancies, salaries1, companies, links1):
         # Переходим на страницу вакансии, чтобы проверить описание
         driver.get(link)
