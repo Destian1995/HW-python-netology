@@ -18,7 +18,7 @@ def connect_site(url):
 
 
 def searchitems(driver, keywords, jsondict=None):
-    if jsondict is None:
+    if jsondict is None: # словарь для хранения данных о вакансиях (по умолчанию пустой).
         jsondict = {}
 
     vacancy_class_name = 'vacancy-name'
