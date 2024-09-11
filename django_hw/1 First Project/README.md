@@ -47,4 +47,9 @@ python manage.py runserver
 ```
 После выполнения команды запускается вот такой сайт, с тремя вкладками
 ![image](https://github.com/user-attachments/assets/bbf935a3-7146-434a-a72b-e06fcad2b89a)
+Вот список файлов в директории
+![image](https://github.com/user-attachments/assets/b40c73a7-ff84-4cf1-8710-da375af78b20)
+а вот время
+![image](https://github.com/user-attachments/assets/73a69993-7864-4e18-a4b8-658eae49bbb8)
+
 
