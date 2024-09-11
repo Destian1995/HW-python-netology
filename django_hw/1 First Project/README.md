@@ -23,6 +23,7 @@
 
 В случае возникновения ошибок, не забывайте использовать рекомендации по отладке вашего Django-проекта из лекции.
 
+
 ## Подсказки
 
 - Для получения списка файлов в рабочей директории вам поможет функция `listdir` https://docs.python.org/3.7/library/os.html#os.listdir;
@@ -44,3 +45,6 @@ pip install -r requirements.txt
 ```bash
 python manage.py runserver
 ```
+После выполнения команды запускается вот такой сайт, с тремя вкладками
+![image](https://github.com/user-attachments/assets/bbf935a3-7146-434a-a72b-e06fcad2b89a)
+
