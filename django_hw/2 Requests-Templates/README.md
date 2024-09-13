@@ -62,3 +62,11 @@ pip install -r requirements.txt
 ```bash
 python manage.py runserver
 ```
+Главная страница
+![image](https://github.com/user-attachments/assets/5990c112-9aed-4fd9-bc41-356104f77982)
+Пример страницы с Омлетом
+![image](https://github.com/user-attachments/assets/6eb6ddc9-50e2-4938-85f6-fc306a774572)
+А вот при указанном параметре servings=4
+![image](https://github.com/user-attachments/assets/d87c66b7-73b1-4c42-9901-8d5351c1976c)
+
+
