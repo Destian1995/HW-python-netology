@@ -75,3 +75,15 @@ python manage.py runserver
 python manage.py makemigrations
 python manage.py migrate
 ```
+Начальный экран
+![image](https://github.com/user-attachments/assets/7ba371c6-62eb-4ab2-ba1e-d19276ae4606)
+При попытке перейти на любой телефон
+![image](https://github.com/user-attachments/assets/e0ab0c1f-24d9-497d-935d-78c59da1d64d)
+Сортировки по минимальной цене
+![image](https://github.com/user-attachments/assets/8aff20cb-dd8c-4086-a60e-913de791c3bc)
+Сортировки по названию
+![image](https://github.com/user-attachments/assets/8b06993f-1518-4c64-97e8-263939d1e3fe)
+
+
+
+
