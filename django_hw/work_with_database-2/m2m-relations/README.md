@@ -132,3 +132,5 @@ python manage.py loaddata articles.json
 ```bash
 python manage.py runserver
 ```
+После добавления тегов, сайт выглядит так:
+![image](https://github.com/user-attachments/assets/1c230424-c856-43ee-b72e-24e748c15e0f)
