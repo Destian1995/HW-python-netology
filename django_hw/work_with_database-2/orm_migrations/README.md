@@ -74,3 +74,5 @@ python manage.py loaddata school.json
 ```bash
 python manage.py runserver
 ```
+После запуска...
+![image](https://github.com/user-attachments/assets/8ae2b338-70f3-4c35-a78b-09fbe6dab763)
