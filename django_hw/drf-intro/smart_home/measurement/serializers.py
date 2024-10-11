@@ -7,9 +7,11 @@ class SensorSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'description']
 
 class MeasurementSerializer(serializers.ModelSerializer):
+    sensor = serializers.SlugRelatedField(slug_field='name', queryset=Sensor.objects.all())  # Отображаем имя датчика, а не его ID
+
     class Meta:
         model = Measurement
-        fields = ['temperature', 'created_at']  # Убираем поле sensor и добавляем created_at
+        fields = ['sensor', 'temperature', 'created_at']  # Добавлено поле created_at
 
 class SensorDetailSerializer(serializers.ModelSerializer):
     measurements = MeasurementSerializer(read_only=True, many=True)
