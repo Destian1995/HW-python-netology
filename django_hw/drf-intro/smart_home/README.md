@@ -123,3 +123,14 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+После запуска
+адрес: http://127.0.0.1:8000/api/sensors/
+![image](https://github.com/user-attachments/assets/26754e25-60f8-43e5-8062-23d7f7a38439)
+
+адрес: http://127.0.0.1:8000/api/sensors/5/
+![image](https://github.com/user-attachments/assets/81270e31-ee58-477f-86f3-ec8d4d73a8a2)
+
+адрес: http://127.0.0.1:8000/api/measurements/
+![image](https://github.com/user-attachments/assets/78966c02-5889-48d8-97e3-2ebeeb2eb37b)
+
+
