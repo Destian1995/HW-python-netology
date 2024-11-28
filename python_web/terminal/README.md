@@ -26,6 +26,10 @@
 
 5. Начать управление сервером с помощью ssh (ввести команду в своем терминале):
 
+![2](https://github.com/user-attachments/assets/5d9de506-5c5c-499e-8142-923cfab97c46)
+![1](https://github.com/user-attachments/assets/ea3927fb-3550-4545-bb22-39ab23bc625d)
+
+
 ```bash
 ssh имя_пользователя@ip_сервера
 ```
