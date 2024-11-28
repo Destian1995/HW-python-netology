@@ -27,3 +27,8 @@
 - В README.md описать типовые команды для запуска контейнера c backend-сервером.
 
 > Для проверки работоспособности вашего контейнера отправляйте запросы с помощью `VS Code REST Client` или `Postman`.
+
+```
+docker build -t Destian1995/stocks:1 .
+docker run --name my_stocks -d -p 8000:8000 Destian1995/stocks:1
+```
