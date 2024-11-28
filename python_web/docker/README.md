@@ -14,6 +14,7 @@
 На проверку присылается GitHub-репозиторий с Dockerfile и статичными файлами для него.
 
 > Для пользовательского html можно использовать пример в [каталоге](html/) с ДЗ.
+![Docker_page](https://github.com/user-attachments/assets/b1422c36-7334-47c5-bd79-e88d53c1f604)
 
 ## Задание 2
 
@@ -32,3 +33,4 @@
 docker build -t Destian1995/stocks:1 .
 docker run --name my_stocks -d -p 8000:8000 Destian1995/stocks:1
 ```
+![2](https://github.com/user-attachments/assets/aea65839-f32d-472a-b8cd-6a722a3c0139)
